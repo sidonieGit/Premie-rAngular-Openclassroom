@@ -13,35 +13,33 @@ import { FaceSnap } from './models/face-snap';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
- faceSnaps!: FaceSnap[];
 
+  faceSnaps!: FaceSnap[];
 
- ngOnInit(): void {
-  this.faceSnaps = [
-    new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      10
-    ),
-    new FaceSnap(
-      'Vacances à la plage',
-      'Un souvenir inoubliable de nos vacances d\'été.',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
-      new Date(),
-      30
+  ngOnInit(): void {
+    this.faceSnaps = [
+      new FaceSnap(
+        'Archibald',
+        'Mon meilleur ami depuis toujours !',
+        'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+        new Date(),
+        10
       ),
       new FaceSnap(
-      'Gâteau d\'anniversaire',
-      'Le meilleur gâteau que j\'ai jamais mangé !',
-      'https://images.pexels.com/photos/533424/pexels-photo-533424.jpeg',
-      new Date(),
-      25
-        )
-  ];
-  this.faceSnaps[1].setLocation('à la plage');
-
-
-}
+        'Three Rock Mountain',
+        'Un endroit magnifique pour les randonnées.',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+        new Date(),
+        6
+      ),
+      new FaceSnap(
+        'Un bon repas',
+        'Mmmh que c\'est bon !',
+        'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
+        new Date(),
+        156
+      )
+    ];
+    this.faceSnaps[1].setLocation('à la montagne');
+  }
 }

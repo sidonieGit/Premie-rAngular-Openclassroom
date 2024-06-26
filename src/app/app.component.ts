@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { CommonModule } from '@angular/common';
 import { FaceSnap } from './models/face-snap';
 
 

@@ -9,8 +9,7 @@ import { NgStyle, NgClass, UpperCasePipe, DatePipe, DecimalPipe, PercentPipe, Cu
     NgStyle,
     NgClass,
     UpperCasePipe,
-    DatePipe,
-    CurrencyPipe
+    DatePipe
     
   ],
   templateUrl: './face-snap.component.html',
@@ -21,7 +20,6 @@ export class FaceSnapComponent implements OnInit {
   
   snapButtonText!: string;
   userHasSnapped!: boolean;
-  myPrice: number =336.75;
 
   ngOnInit(): void {
     this.snapButtonText = 'Oh Snap!';

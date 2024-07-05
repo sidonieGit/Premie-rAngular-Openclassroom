@@ -19,7 +19,7 @@ export class FaceSnapsService {
             'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
             new Date(),
             6
-        ),
+        ).withtLocation('à la montagne'),
         new FaceSnap(
             'Un bon repas',
             'Mmmh que c\'est bon !',
@@ -32,4 +32,20 @@ export class FaceSnapsService {
     getFaceSnaps(): FaceSnap[] {
         return [...this.faceSnaps];
     }
+
+    snapFaceSnapById(faceSnapId: string): void {
+      const foundFaceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
+      if (!foundFaceSnap) {
+        throw new Error('FaceSnap not found!');
+      }
+      foundFaceSnap.addSnap();
+  }
+
+  unsnapFaceSnapById(faceSnapId: string): void {
+    const foundFaceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
+    if (!foundFaceSnap) {
+      throw new Error('FaceSnap not found!');
+    }
+    foundFaceSnap.removeSnap();
+}
 }

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap";
+import { SnapType } from "../models/snap-type.type";
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +20,7 @@ export class FaceSnapsService {
             'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
             new Date(),
             6
-        ),
+        ).withtLocation('à la montagne'),
         new FaceSnap(
             'Un bon repas',
             'Mmmh que c\'est bon !',
@@ -32,4 +33,14 @@ export class FaceSnapsService {
     getFaceSnaps(): FaceSnap[] {
         return [...this.faceSnaps];
     }
+
+    snapFaceSnapById(faceSnapId: string, snapType: SnapType): void {
+      const foundFaceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
+      if (!foundFaceSnap) {
+        throw new Error('FaceSnap not found!');
+      }
+      foundFaceSnap.snap(snapType);
+  }
+
+
 }
